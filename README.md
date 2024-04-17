@@ -52,9 +52,10 @@ We assume you will deplyt the code in /scratch/$USER. Note this directory is not
 NOTE: the following is yet untested
 
 ```bash
-export PROJECT=/scratch/$USER/workdir
-mkdir -p $PROJECT
-cd $PROJECT
+export SCRATCH=/scratch/$USER/workdir
+export PROJECT=/scratch/$USER/workdir/cylonplus
+mkdir -p $SCRATCH
+cd $SCRATCH
 ```
 
 ### Setup Cylon
