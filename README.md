@@ -21,7 +21,7 @@ conda create -n cyp-venv python=3.11
 conda activate cyp-venv
 
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-DIR=/u/djy8hg/anaconda3/envs/cyp-venv 
+DIR=/u/$USER/anaconda3/envs/cyp-venv 
 
 export CUDA_HOME=$DIR/bin
 export PATH=$DIR/bin:$PATH LD_LIBRARY_PATH=$DIR/lib:$LD_LIBRARY_PATH PYTHONPATH=$DIR/lib/python3.11/site-packages 
@@ -67,42 +67,17 @@ source clean.sh
 source install.sh
 ```
 
-The script can be found at
+The scripts are available in github at 
 
+* <https://github.com/laszewsk/cylonplus/blob/main/clean.sh>
+* <https://github.com/laszewsk/cylonplus/blob/main/install.sh>
 
-
-
-
-
-
-TODO: bets to convert to slurm script and run on node as batch script
+Once it is installed you can in a shell just activate it so you do not need to reiinstall it all the time with
 
 ```bash
-rivanna>
-  git clone https://github.com/arupcsedu/cylonplus.git
-  cd cylonplus
-  module purge
-  module load anaconda
-
-  conda create --prefix=./CYLONPLUS python=3.11 -y
-  conda activate ./CYLONPLUS
-
-  conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
-
-  export PYTHON_DIR=$PROJECT/CYLONPLUS #?
-  export CUDA_HOME=$PYTHON_DIR/bin 
-  export PATH=$PYTHON_DIR/bin:$PATH
-  export LD_LIBRARY_PATH=$PYTHON_DIR/lib:$LD_LIBRARY_PATH
-  export PYTHONPATH=$PYTHON_DIR/lib/python3.11/site-packages 
-
-  pip install petastorm
+source activate.sh
 ```
-
-once converted to a slurm script called `install.slurm` execute
-
-```bash
-sbatch install.slurm
-```
+* <https://github.com/laszewsk/cylonplus/blob/main/activate.sh>
 
 ### Running the program
 
