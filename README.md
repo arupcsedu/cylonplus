@@ -45,6 +45,12 @@ If you use Windows we recommand not to use putty but use gitbash as it mimics a 
 ssh rivanna
 ```
 
+### Login into a GPU worker node
+
+```bash
+source target/rivanna/activate.sh a100
+```
+
 ### Setup a PROJECT dir
 
 We assume you will deplyt the code in /scratch/$USER. Note this directory is not backed up. Make sure to backup your changes regularly elsewhere with rsync or use github.
@@ -63,23 +69,40 @@ cd $SCRATCH
 We created two simple scripts. The first removes the coonda environment if existing, the second installs it.
 
 ```bash
-source clean.sh
-source install.sh
+source target/rivanna/clean.sh
+source target/rivanna/install.sh
 ```
 
 The scripts are available in github at 
 
-* <https://github.com/laszewsk/cylonplus/blob/main/clean.sh>
-* <https://github.com/laszewsk/cylonplus/blob/main/install.sh>
+* <https://github.com/laszewsk/cylonplus/blob/main/target/rivanna/clean.sh>
+* <https://github.com/laszewsk/cylonplus/blob/main/target/rivanna/install.sh>
 
 Once it is installed you can in a shell just activate it so you do not need to reiinstall it all the time with
 
 ```bash
-source activate.sh
+source target/rivanna/activate.sh
 ```
+
 * <https://github.com/laszewsk/cylonplus/blob/main/activate.sh>
 
-### Running the program
+### Running the program on the interactivenode
+
+```bash
+source target/rivanna/run.sh
+```
+
+
+### Using a slurm script to do the install, activation ,adnd run
+
+
+TBD
+
+
+
+Single job
+
+
 
 create a slurm script that includes 
 

@@ -1,5 +1,6 @@
 export SCRATCH=/scratch/$USER/workdir
 export PROJECT=/scratch/$USER/workdir/cylonplus
+# export PROJECT=`pwd`/cylonplus
 
 cd $PROJECT
 module purge

@@ -10,6 +10,6 @@ cd $PROJECT
 module purge
 module load anaconda
 
-conda activate ./CYLONPLUS
+conda activate $PROJECT/CYLONPLUS
 
 
