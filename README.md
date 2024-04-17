@@ -15,7 +15,6 @@ ssh your_computing_id@gpusrv08 -J your_computing_id@portal.cs.virginia.edu
 ssh your_computing_id@gpusrv08 -J your_computing_id@portal.cs.virginia.edu
 git clone https://github.com/arupcsedu/cylonplus.git
 cd cylonplus
-module purge
 module load anaconda3
 
 conda create -n cyp-venv python=3.11
@@ -59,7 +58,22 @@ mkdir -p $SCRATCH
 cd $SCRATCH
 ```
 
-### Setup Cylon
+### Setup Cylonplus
+
+We created two simple scripts. The first removes the coonda environment if existing, the second installs it.
+
+```bash
+source clean.sh
+source install.sh
+```
+
+The script can be found at
+
+
+
+
+
+
 
 TODO: bets to convert to slurm script and run on node as batch script
 
@@ -67,15 +81,16 @@ TODO: bets to convert to slurm script and run on node as batch script
 rivanna>
   git clone https://github.com/arupcsedu/cylonplus.git
   cd cylonplus
-  module load anaconda3
+  module purge
+  module load anaconda
 
-  conda create --prefix=$PROJECT/CYLONPLUS cyp-venv python=3.11
-  conda activate --prefix=$PROJECT/CYLONPLUS
+  conda create --prefix=./CYLONPLUS python=3.11 -y
+  conda activate ./CYLONPLUS
 
-  conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+  conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 
   export PYTHON_DIR=$PROJECT/CYLONPLUS #?
-  export CUDA_HOME=$PYTHON_DIR/bin # should that be cuda prefix?
+  export CUDA_HOME=$PYTHON_DIR/bin 
   export PATH=$PYTHON_DIR/bin:$PATH
   export LD_LIBRARY_PATH=$PYTHON_DIR/lib:$LD_LIBRARY_PATH
   export PYTHONPATH=$PYTHON_DIR/lib/python3.11/site-packages 
