@@ -5,8 +5,8 @@ cd $PROJECT
 module purge
 module load anaconda
 
-conda create --prefix=./CYLONPLUS python=3.11 -y
-conda activate ./CYLONPLUS
+conda create --prefix=$PROJECT/CYLONPLUS python=3.11 -y
+conda activate $PROJECT/CYLONPLUS
 
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 
