@@ -21,7 +21,7 @@ conda create -n cyp-venv python=3.11
 conda activate cyp-venv
 
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-DIR=/u/djy8hg/anaconda3/envs/cyp-venv 
+DIR=/u/$USER/anaconda3/envs/cyp-venv 
 
 export CUDA_HOME=$DIR/bin
 export PATH=$DIR/bin:$PATH LD_LIBRARY_PATH=$DIR/lib:$LD_LIBRARY_PATH PYTHONPATH=$DIR/lib/python3.11/site-packages 
