@@ -51,6 +51,18 @@ ssh rivanna
 source target/rivanna/activate.sh a100
 ```
 
+Make sure your ~/.condarc file looks like
+
+ cat ~/.condarc
+
+```
+env_prompt: '({name}) '
+pkgs_dirs:
+  - /scratch/thf2bn/.conda/pkgs
+```
+
+change the value of thf2bn to the value of $USER
+
 ### Setup a PROJECT dir
 
 We assume you will deplyt the code in /scratch/$USER. Note this directory is not backed up. Make sure to backup your changes regularly elsewhere with rsync or use github.
@@ -93,20 +105,18 @@ source target/rivanna/run.sh
 ```
 
 
-### Using a slurm script to do the install, activation ,adnd run
+### Using a slurm script to do the install, activation, and run
 
 
-TBD
+```bash
+sbatch target/rivanna/run-simple.slurm
+```
 
+```bash
+squeue --me
+```
 
-
-Single job
-
-
-
-create a slurm script that includes 
-
-script.slurm:
+run-simple.slurm:
 
 ```bash
 TODO: add the slurm parameters in the script. see rivanna documentation
@@ -119,3 +129,11 @@ submit the script
 ```bash
 sbatch script.slurm
 ```
+
+or use 
+
+```bash
+watch sbatch script.slurm
+```
+
+for a continious uppdate every second.

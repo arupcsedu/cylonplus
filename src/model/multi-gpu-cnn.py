@@ -1,6 +1,7 @@
 #Arup Sarker: DDP implement with multiprocess by using spawn on CNN
 #Command: python multi-gpu-cnn.py
 from __future__ import print_function
+from cloudmesh.common.StopWatch import StopWatch
 import argparse
 import torch
 import torch.nn as nn
@@ -139,7 +140,8 @@ def _transform_row(mnist_row):
 
 
 if __name__ == '__main__':
-     # Training settings
+    # Training settings
+    StopWatch.start("initialize")
     DEFAULT_MNIST_DATA_PATH = '/tmp/mnist'
 
     default_dataset_url = 'file://{}'.format(DEFAULT_MNIST_DATA_PATH)
@@ -183,6 +185,7 @@ if __name__ == '__main__':
     
     world_size = torch.cuda.device_count()
     print(f"World Size:  {world_size}")
+    StopWatch.stop("initialize")
 
 
 
@@ -236,4 +239,10 @@ if __name__ == '__main__':
     test_loader = torch.utils.data.DataLoader(dataset2, **test_kwargs)
   
     
+    StopWatch.start("spawn")
+
     mp.spawn(main, args=(world_size, args, device, train_loader, test_loader), nprocs=world_size)
+
+    StopWatch.stop("spawn")
+
+    StopWatch.benchmark()
