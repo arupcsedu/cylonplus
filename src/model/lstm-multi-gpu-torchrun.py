@@ -1,4 +1,7 @@
-# Command: torchrun --standalone --nproc_per_node=4  lstm-multi-gpu-torchrun.py --epochs 3 
+#install,
+# conda install matplotlib
+# conda install scikit-learn
+# Command: torchrun --standalone --nproc_per_node=1  lstm-multi-gpu-torchrun.py --epochs 3 
 
 import torch
 import torch.nn as nn
@@ -52,38 +55,36 @@ def prepare_dataloader(x, y, batch_size):
     dataset = TensorDataset(tensor_x, tensor_y)
     return DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
-# def plot_predictions(model, test_data_loader, scaler, device):
-#     model.eval() 
-#     actual_prices = []
-#     predicted_prices = []
+def plot_predictions(model, test_data_loader, scaler, device):
+    model.eval() 
+    actual_prices = []
+    predicted_prices = []
     
-#     with torch.no_grad():
-#         for data, targets in test_data_loader:
-#             data, targets = data.to(device), targets.to(device)
-#             predictions = model(data)
-#             actual_prices.extend(scaler.inverse_transform(targets.cpu().numpy()))
-#             predicted_prices.extend(scaler.inverse_transform(predictions.cpu().numpy()))
+    with torch.no_grad():
+     for data, targets in test_data_loader:
+         data, targets = data.to(device), targets.to(device)
+         predictions = model(data)
+         actual_prices.extend(scaler.inverse_transform(targets.cpu().numpy()))
+         predicted_prices.extend(scaler.inverse_transform(predictions.cpu().numpy()))
     
-#     actual_prices = np.array(actual_prices)
-#     predicted_prices = np.array(predicted_prices)
-#     plt.figure(figsize=(20,10))
-#     plt.plot(actual_prices, label='Actual Prices', color='blue')
-#     plt.plot(predicted_prices, label='Predicted Prices', color='red')
-#     plt.title('Actual vs Predicted Stock Prices')
-#     plt.xlabel('Time')
-#     plt.ylabel('Prices')
-#     plt.legend()
-#     plt.show()
-#     plt.savefig('prediction_vs_actual.png')
+    actual_prices = np.array(actual_prices)
+    predicted_prices = np.array(predicted_prices)
+    
+    plt.figure(figsize=(20,10))
+    plt.plot(actual_prices, label='Actual Prices', color='blue')
+    plt.plot(predicted_prices, label='Predicted Prices', color='red')
+    plt.title('Actual vs Predicted Stock Prices')
+    plt.xlabel('Time')
+    plt.ylabel('Prices')
+    plt.legend()
+    plt.show()
+    plt.savefig('prediction_vs_actual.png')
 
 def main(args):
-    (x_train, y_train), (x_test, y_test), _ = load_data(args.data_path, args.sequence_length)
+    (x_train, y_train), (x_test, y_test), _ = load_data("rnn/data/nasdaq_data.csv", args.sequence_length)
     train_data_loader = prepare_dataloader(x_train, y_train, args.batch_size)
     
-    if use_cuda:
-        device = torch.device("cuda")
-    else:
-        device = torch.device("cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     model = LSTMNet(input_dim=1, hidden_dim=args.hidden_dim, output_dim=1, num_layers=args.num_layers).to(device)
     criterion = torch.nn.MSELoss()
@@ -105,8 +106,9 @@ def main(args):
                 print(f'Train Epoch: {epoch} [{batch_idx * len(data)}/{len(train_data_loader.dataset)} ({100. * batch_idx / len(train_data_loader):.0f}%)] \tLoss: {loss.item():.6f}')
 
         print(f'Epoch {epoch} Average Loss: {total_loss / len(train_data_loader):.6f}')
-    (x_test, y_test), _, scaler = load_data(args.data_path, args.sequence_length)
-    # plot_predictions(model, test_data_loader, scaler, device)
+    (x_test, y_test), _, scaler = load_data("rnn/data/nasdaq_data.csv", args.sequence_length)
+    test_data_loader = prepare_dataloader(x_test, y_test, args.batch_size)
+    plot_predictions(model, test_data_loader, scaler, device)
 
 
 

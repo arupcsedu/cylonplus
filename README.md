@@ -115,19 +115,6 @@ sbatch target/rivanna/run-simple.slurm
 ```bash
 squeue --me
 ```
-
-run-simple.slurm:
-
-```bash
-TODO: add the slurm parameters in the script. see rivanna documentation
-cd src/model
-python multi-gpu-cnn.py
-```
-
-submit the script
-
-```bash
-sbatch script.slurm
 ```
 
 or use 

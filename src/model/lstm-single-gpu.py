@@ -110,7 +110,7 @@ def main():
     parser.add_argument('--save-model', action='store_true', default=False,
                         help='For Saving the current Model')
     args = parser.parse_args()
-    x, y, scaler = load_and_process_data("../data/nasdaq_data.csv", args.sequence_length)
+    x, y, scaler = load_and_process_data("rnn/data/nasdaq_data.csv", args.sequence_length)
     split_idx = int(len(x) * 0.8)
     x_train, y_train = x[:split_idx], y[:split_idx]
     x_test, y_test = x[split_idx:], y[split_idx:]

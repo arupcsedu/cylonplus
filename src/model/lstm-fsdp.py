@@ -1,5 +1,4 @@
-# Command: torchrun --standalone --nproc_per_node=4  lstm-fsdp.py --epochs 3 --data_path src/model/rnn/data/nasdaq_data.csv
-
+# Command: torchrun --standalone --nproc_per_node=4  lstm-fsdp.py --epochs 3
 import argparse
 import torch
 import torch.nn as nn
@@ -95,8 +94,8 @@ def main(args):
     
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='LSTM for Time Series Data with FSDP')
-    parser.add_argument('--data_path', type=str, required=True, help='Path to the dataset')
+    parser = argparse.ArgumentParser(description='LSTM with FSDP')
+    parser.add_argument('--data_path', type=str, help='Path to the dataset', default='rnn/data/nasdaq_data.csv')
     parser.add_argument('--sequence_length', type=int, default=60, help='Length of the input sequences')
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train')
     parser.add_argument('--batch_size', type=int, default=32, help='Input batch size for training')
