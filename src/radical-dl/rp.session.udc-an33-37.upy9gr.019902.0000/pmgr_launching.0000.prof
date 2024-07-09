@@ -1,0 +1,20 @@
+#time,event,comp,thread,uid,state,msg
+1719587497.9532242,sync_abs,pmgr_launching.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587497.9524686:1719587497.9855027:ntp
+1719587497.9786494,comp_start,pmgr_launching.0000,MainThread,pmgr_launching.0000,,
+#time,event,comp,thread,uid,state,msg
+1719587498.0188456,sync_abs,pmgr_launching.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587498.0188043:1719587498.0518384:ntp
+1719587498.5280097,component_init,pmgr_launching.0000,Thread-1 (_work_loop),,,
+1719587502.2877922,advance,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,PMGR_LAUNCHING,
+1719587502.3936932,staging_in_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,
+1719587502.3938606,staging_in_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0000
+1719587502.4400766,staging_in_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0000
+1719587502.4400923,staging_in_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0001
+1719587502.4595795,staging_in_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0001
+1719587502.4595945,staging_in_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0002
+1719587502.4865532,staging_in_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0002
+1719587502.5805428,staging_in_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0003
+1719587502.6153977,staging_in_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,sd.0003
+1719587502.6154902,staging_in_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,
+1719587502.6154902,submission_start,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,
+1719587502.6496086,submission_stop,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,,
+1719587502.6496258,advance,pmgr_launching.0000,Thread-1 (_work_loop),pilot.0000,PMGR_ACTIVE_PENDING,

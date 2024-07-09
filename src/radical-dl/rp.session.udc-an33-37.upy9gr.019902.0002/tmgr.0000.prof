@@ -1,0 +1,12 @@
+#time,event,comp,thread,uid,state,msg
+1719589029.3632729,sync_abs,tmgr.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719589029.362613:1719589029.367774:ntp
+1719589029.6654396,component_init,tmgr.0000,Thread-18 (_work_loop),,,
+1719589032.2655568,setup_done,tmgr.0000,MainThread,tmgr.0000,,
+1719589053.8692906,advance,tmgr.0000,MainThread,raptor.0000,NEW,
+1719589053.8693755,advance,tmgr.0000,MainThread,raptor.0000,TMGR_SCHEDULING_PENDING,
+1719589053.8843052,advance,tmgr.0000,MainThread,raptor.0000.0000,NEW,
+1719589053.8844233,advance,tmgr.0000,MainThread,raptor.0000.0001,NEW,
+1719589053.8844752,advance,tmgr.0000,MainThread,raptor.0000.0000,TMGR_SCHEDULING_PENDING,
+1719589053.8844752,advance,tmgr.0000,MainThread,raptor.0000.0001,TMGR_SCHEDULING_PENDING,
+1719589053.8955340,advance,tmgr.0000,MainThread,task.000000,NEW,
+1719589053.8956122,advance,tmgr.0000,MainThread,task.000000,TMGR_SCHEDULING_PENDING,

@@ -1,0 +1,14 @@
+#time,event,comp,thread,uid,state,msg
+1719587500.6580098,sync_abs,tmgr_staging_input.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587500.6573722:1719587500.6904063:ntp
+1719587500.6765597,comp_start,tmgr_staging_input.0000,MainThread,tmgr_staging_input.0000,,
+#time,event,comp,thread,uid,state,msg
+1719587500.7185135,sync_abs,tmgr_staging_input.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587500.7184699:1719587500.751504:ntp
+1719587501.0405107,component_init,tmgr_staging_input.0000,Thread-1 (_work_loop),,,
+1719587543.8057139,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000,TMGR_STAGING_INPUT,
+1719587543.8058691,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000,AGENT_STAGING_INPUT_PENDING,
+1719587543.8132644,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000.0000,TMGR_STAGING_INPUT,
+1719587543.8132644,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000.0001,TMGR_STAGING_INPUT,
+1719587543.8133948,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000.0000,AGENT_STAGING_INPUT_PENDING,
+1719587543.8133948,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),raptor.0000.0001,AGENT_STAGING_INPUT_PENDING,
+1719587543.8247855,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),task.000000,TMGR_STAGING_INPUT,
+1719587543.8248851,advance,tmgr_staging_input.0000,Thread-1 (_work_loop),task.000000,AGENT_STAGING_INPUT_PENDING,
