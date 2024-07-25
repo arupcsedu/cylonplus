@@ -1,3 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719587499.1921816,sync_abs,cmgr.0002,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587499.1909878:1719587499.224022:ntp
-1719587499.1922002,init2,cmgr.0002,MainThread,cmgr.0002,,/scratch/upy9gr/workdir/cylonplus/src/radical-dl/rp.session.udc-an33-37.upy9gr.019902.0000

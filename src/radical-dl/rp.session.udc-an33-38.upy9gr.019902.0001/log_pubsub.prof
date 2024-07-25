@@ -1,3 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719587974.1881285,sync_abs,log_pubsub,MainThread,,,udc-an33-38.hpc.virginia.edu:10.153.48.44:1719587974.1867719:1719587974.1937249:ntp
-1719587974.1940084,bridge_start,log_pubsub,MainThread,log_pubsub,,

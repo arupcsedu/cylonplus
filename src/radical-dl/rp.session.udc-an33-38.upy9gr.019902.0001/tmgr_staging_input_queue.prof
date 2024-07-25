@@ -1,3 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719587979.1642148,sync_abs,tmgr_staging_input_queue,MainThread,,,udc-an33-38.hpc.virginia.edu:10.153.48.44:1719587979.1631594:1719587979.1701124:ntp
-1719587979.1700988,bridge_start,tmgr_staging_input_queue,MainThread,tmgr_staging_input_queue,,

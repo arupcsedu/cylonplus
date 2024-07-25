@@ -1,9 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719587976.8505001,sync_abs,pmgr.0000,MainThread,,,udc-an33-38.hpc.virginia.edu:10.153.48.44:1719587976.8488443:1719587976.8557973:ntp
-1719587977.1527219,component_init,pmgr.0000,Thread-13 (_work_loop),,,
-1719587978.5417917,setup_done,pmgr.0000,MainThread,pmgr.0000,,
-1719587981.4199791,advance,pmgr.0000,MainThread,pilot.0000,NEW,
-1719587981.4201827,advance,pmgr.0000,MainThread,pilot.0000,PMGR_LAUNCHING_PENDING,
-1719587981.4239247,advance,pmgr.0000,Thread-17 (_listener),pilot.0000,PMGR_LAUNCHING,
-1719587981.5077267,advance,pmgr.0000,Thread-17 (_listener),pilot.0000,PMGR_ACTIVE_PENDING,
-1719587999.6614697,advance,pmgr.0000,Thread-17 (_listener),pilot.0000,PMGR_ACTIVE,

@@ -1,3 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719587497.6746223,sync_abs,pmgr_launching_queue,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719587497.6741626:1719587497.7071967:ntp
-1719587497.7071998,bridge_start,pmgr_launching_queue,MainThread,pmgr_launching_queue,,

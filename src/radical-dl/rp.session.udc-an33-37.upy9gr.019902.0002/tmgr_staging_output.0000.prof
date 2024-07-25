@@ -1,6 +1,0 @@
-#time,event,comp,thread,uid,state,msg
-1719589031.5250750,sync_abs,tmgr_staging_output.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719589031.524256:1719589031.529417:ntp
-1719589031.5315216,comp_start,tmgr_staging_output.0000,MainThread,tmgr_staging_output.0000,,
-#time,event,comp,thread,uid,state,msg
-1719589031.5733140,sync_abs,tmgr_staging_output.0000,MainThread,,,udc-an33-37.hpc.virginia.edu:10.153.48.43:1719589031.5732749:1719589031.578436:ntp
-1719589031.8822920,component_init,tmgr_staging_output.0000,Thread-1 (_work_loop),,,

@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/sfs/weka/scratch/upy9gr/workdir/cylonplus/src/radical-dl/hello_world_simple.py", line 32, in <module>
-    pilot.wait(rp.PMGR_ACTIVE)
-  File "/scratch/upy9gr/workdir/rp_dl/lib/python3.11/site-packages/radical/pilot/pilot.py", line 600, in wait
-    time.sleep(0.1)
-KeyboardInterrupt
-slurmstepd: error: *** JOB 62236460 ON udc-an33-38 CANCELLED AT 2024-06-26T23:04:46 ***
