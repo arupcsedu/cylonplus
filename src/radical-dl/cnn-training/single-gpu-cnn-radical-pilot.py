@@ -7,6 +7,9 @@ import radical.utils as ru
 
 PWD = os.path.abspath(os.path.dirname(__file__))
 
+MODEL_DIR = os.path.abspath('%s/../../model' % PWD)
+CONFIG_DIR = os.path.abspath('%s/../' % PWD)
+
 # ------------------------------------------------------------------------------
 #
 if __name__ == '__main__':
@@ -25,7 +28,7 @@ if __name__ == '__main__':
 
     try:
         # read the config used for resource details
-        config = ru.read_json('%s/config.json' % os.path.dirname(__file__))
+        config = ru.read_json('%s/config.json' % CONFIG_DIR)
 
         # Add a Pilot Manager
         pmgr = rp.PilotManager(session=session)
@@ -54,7 +57,7 @@ if __name__ == '__main__':
         td = rp.TaskDescription()
         td.executable    = '/bin/sh'
         td.arguments     = ['single-gpu-cnn.sh']
-        td.input_staging    = ['%s/single-gpu-cnn.sh' % PWD, '%s/single-gpu-cnn.py' % PWD]
+        td.input_staging    = ['%s/single-gpu-cnn.sh' % PWD, '%s/single-gpu-cnn.py' % MODEL_DIR]
         td.ranks          = 1
         td.cores_per_rank = 8 
         td.gpus_per_rank  = 1
