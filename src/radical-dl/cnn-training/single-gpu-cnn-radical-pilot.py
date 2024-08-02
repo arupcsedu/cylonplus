@@ -55,9 +55,15 @@ if __name__ == '__main__':
 
         # Create a task description for our ML training
         td = rp.TaskDescription()
-        td.executable    = '/bin/sh'
-        td.arguments     = ['single-gpu-cnn.sh']
-        td.input_staging    = ['%s/single-gpu-cnn.sh' % PWD, '%s/single-gpu-cnn.py' % MODEL_DIR]
+        td.executable    = 'python3'
+        td.arguments      = 'single-gpu-cnn.py '      \
+                            '--epochs 10 '            \
+                            '--batch-size 64 '        \
+                            '--test-batch-size 1000 ' \
+                            '--lr 0.01 '              \
+                            '--gamma 0.7 '            \
+                            '--save-model'.split()
+        td.input_staging  = ['%s/single-gpu-cnn.py' % MODEL_DIR]
         td.ranks          = 1
         td.cores_per_rank = 8 
         td.gpus_per_rank  = 1
