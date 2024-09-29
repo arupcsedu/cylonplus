@@ -9,7 +9,7 @@
 #SBATCH --gres=gpu:1
 
 ENV_PATH=/scratch/upy9gr/workdir/rp_dl
-SCRIPT_PATH=/scratch/upy9gr/workdir/cylonplus/src/radical-dl/neural-forecast/radical-neural-forecast.py
+SCRIPT_PATH=/scratch/upy9gr/workdir/cylonplus/src/radical-dl/neural-forecast/raptor-neural-forecast.py
 
 module load anaconda
 module load intel
